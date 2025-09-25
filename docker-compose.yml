@@ -1,0 +1,17 @@
+services:
+  redis:
+    image: "redis"
+    container_name: "redis-limiter"
+    ports:
+      - "${CACHE_PORT}:6379"
+    environment:
+      - CACHE_HOST=${CACHE_HOST}
+      - CACHE_PORT=${CACHE_PORT}
+  notification-service:
+    build: .
+    container_name: notification-service
+    environment:
+      - CACHE_HOST=${CACHE_HOST}
+      - CACHE_PORT=${CACHE_PORT}
+    depends_on:
+      - redis

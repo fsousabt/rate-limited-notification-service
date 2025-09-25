@@ -47,6 +47,9 @@ go test ./...
 ## Future Improvements
 
 [ ] Add gRPC endpoints
+
 [ ] Deploy service on AWS
+
 [ ] Add metrics dashboard (Prometheus/Grafana)
+
 [ ] Async notifications with queues (Kafka/RabbitMQ)
